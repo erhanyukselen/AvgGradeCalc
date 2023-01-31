@@ -1,0 +1,32 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model CRUDApp.Models.kayitModel
+@{
+    ViewBag.Title = "Detay";
+    Layout = "_Layout";
+}
+
+<h2>Kişi Detayı</h2>
+
+<table class="table">
+    <tr>
+        <td>KN</td>
+        <td>@Html.DisplayFor(m=>m.kayId)</td>
+    </tr>
+    <tr>
+        <td>Adı Soyadı</td>
+        <td>@Html.DisplayFor(m=>m.adsoyad)</td>
+    </tr>
+    <tr>
+        <td>Yaş</td>
+        <td>@Html.DisplayFor(m=>m.yas)</td>
+    </tr>
+    <tr>
+        <td>Adres</td>
+        <td>@Html.DisplayFor(m=>m.adres)</td>
+    </tr>
+</table>
+
+@Html.ActionLink("Geri Dön","Kayitlar",null,new {@class="btn btn-danger"})
+

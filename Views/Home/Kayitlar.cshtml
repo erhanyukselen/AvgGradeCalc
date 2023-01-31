@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<CRUDApp.Models.kayitModel>
+@{
+    ViewBag.Title = "Kayitlar";
+    Layout = "_Layout";
+}
+<h2>Kayitlar</h2>
+
+
+
+<table class="table">
+    <tr>
+        <td>KN</td>
+        <td>Adı Soyadı</td>  
+        <td>Detay</td>
+    </tr>
+    @foreach (var kayit in Model)
+    {
+        <tr>
+            <td>@kayit.kayId</td>
+            <td>@kayit.adsoyad</td>
+            <td>@Html.ActionLink("Kişi Detayı","Detay", new {id=@kayit.kayId}, new 
+                {@class="btn btn-primary"})</td>
+        </tr>
+    }
+</table>
+
+@Html.ActionLink("Geri Dön","Index",null,new {@class="btn btn-danger"})

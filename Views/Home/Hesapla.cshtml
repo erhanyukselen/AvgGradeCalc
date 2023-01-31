@@ -1,0 +1,31 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Hesapla";
+    Layout = "_Layout";
+}
+<h2>Hesapla</h2>
+@using (Html.BeginForm("Hesapla","Home",FormMethod.Post))
+{
+    @Html.Label("Vize Notu Giriniz(%30)")
+    @Html.TextBox("vNot",null,new {@class="form-control", type="number", required="required"})
+
+    @Html.Label("Uygulama Notu Giriniz(%10)")
+    @Html.TextBox("uNot",null,new {@class="form-control", type="number", required="required"})
+
+
+    @Html.Label("Final Notu Giriniz(%60)")
+    @Html.TextBox("fNot",null,new {@class="form-control", type="number", required="required"})
+
+    <br />
+    <input type="submit" value="Hesapla" class="btn btn-success"/>
+
+    <br /><br />
+    if (ViewBag.sonuc != null)
+    {
+        <div class="@ViewBag.cl">Ortalama : @ViewBag.ortalama Sonuç : @ViewBag.sonuc </div>
+    }
+    @Html.ActionLink("Geri Dön","Index",null,new {@class="btn btn-danger"})
+
+}
